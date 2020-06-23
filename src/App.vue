@@ -1,28 +1,53 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    <div class="con">
+      <TopRow :topRow="Dummy.topRow" />
+      <div class="todo">
+        <Column v-for="(col, index) in Dummy.cols" :col="col" :key="index" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './parts/Header.vue'
+import TopRow from './parts/TopRow.vue'
+import Column from './parts/Column.vue'
+import Dummy from './Dummy'
+
 
 export default {
   name: 'App',
+  data: () => ({
+    Dummy
+  }),
   components: {
-    HelloWorld
+    Column,
+    TopRow,
+    Header
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #F3F6F8;
+}
+.con{
+  margin-top: 20px;
+  padding: 0 50px;
+}
+#app{
+  overflow-x: auto;
+  height: 100vh;
+}
+.todo{
+  padding: 0 20px;
+  display: flex;
 }
 </style>
