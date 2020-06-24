@@ -26,41 +26,35 @@ export default {
 }
 </script>
 
-<style scoped>
-.footer > .day {
-    display: flex;
-    align-items: center;
-}
-.footer > .day > span {
-    margin-right: 2px;
-    font-family: monospace;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-    text-align: right;
-
-    color: #0abba5;
-}
-.footer > .state {
-    border: 1px solid #e9edf2;
-    border-radius: 3px;
-    font-family: monospace;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-    /* identical to box height */
-
-    display: flex;
-    align-items: center;
-
-    /* Gray */
-
-    color: #7d8790;
-    padding: 1px 3px 1px 4px;
-}
+<style scoped lang="scss">
 .footer {
+    > .day {
+        display: flex;
+        align-items: center;
+        > span {
+            margin-right: 2px;
+            font-family: monospace;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: right;
+            color: #0abba5;
+        }
+    }
+    > .state {
+        border: 1px solid #e9edf2;
+        border-radius: 3px;
+        font-family: monospace;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        color: #7d8790;
+        padding: 1px 3px 1px 4px;
+    }
     margin-top: 4px;
     display: flex;
     justify-content: space-between;
@@ -68,65 +62,53 @@ export default {
 }
 .itemBodyCon {
     padding-right: 13px;
-    /* width: 100%; */
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 }
-.item .itemBody {
-    width: 100%;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    font-family: monospace;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-
-    color: #35383d;
-}
-.header {
-    display: flex;
-    justify-content: space-between;
-}
-.header > .name {
-    font-family: monospace;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-
-    /* Gray */
-
-    color: #7d8790;
-}
-.header > .time {
-    font-family: monospace;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
-    text-align: right;
-
-    /* Gray */
-
-    color: #7d8790;
-}
 .item {
-    /* #FFFFFF */
-
+    .itemBody {
+        width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        font-family: monospace;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        color: #35383d;
+    }
     background: #ffffff;
-    /* Light Gray */
     margin: 2.5px 0;
     border: 1px solid #e9edf2;
     border-radius: 5px;
     padding: 5px 5px 8px;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 5px black;
+    }
 }
-.item:hover {
-    cursor: pointer;
-    box-shadow: 0 0 5px black;
+.header {
+    display: flex;
+    justify-content: space-between;
+    > .name {
+        font-family: monospace;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        color: #7d8790;
+    }
+    > .time {
+        font-family: monospace;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: right;
+        color: #7d8790;
+    }
 }
 </style>

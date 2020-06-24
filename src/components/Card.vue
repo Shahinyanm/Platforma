@@ -27,13 +27,26 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.card:hover {
-    cursor: pointer;
-    box-shadow: 0 0 5px black;
+<style scoped lang="scss">
+.card {
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 5px black;
+    }
+    width: 180px;
+    min-width: 166px;
+    margin: 0 5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 7px;
 }
-.top > img {
-    margin: 6px 4px 0 0;
+.top {
+    > img {
+        margin: 6px 4px 0 0;
+    }
+    display: flex;
+    margin-bottom: 7px;
+    justify-content: space-between;
 }
 .right {
     font-family: monospace;
@@ -48,19 +61,6 @@ export default {
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
-}
-.card {
-    width: 180px;
-    min-width: 166px;
-    margin: 0 5px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    padding: 7px;
-}
-.top {
-    display: flex;
-    margin-bottom: 7px;
-    justify-content: space-between;
 }
 .bottom {
     display: flex;

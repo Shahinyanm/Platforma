@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .todoItems {
     display: flex;
     flex-direction: column;
@@ -52,24 +52,20 @@ export default {
 .header {
     display: flex;
     justify-content: space-between;
-}
-.header > .right {
-    display: flex;
-    align-items: center;
-}
-.header > .right > img {
-    margin-right: 7px;
-}
-.header > .right > p {
-    font-family: monospace;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-
-    /* Grey 10 */
-
-    color: #7d8790;
+    > .right {
+        display: flex;
+        align-items: center;
+        > img {
+            margin-right: 7px;
+        }
+        > p {
+            font-family: monospace;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 17px;
+            color: #7d8790;
+        }
+    }
 }
 </style>
