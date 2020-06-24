@@ -14,6 +14,7 @@
                 <Column v-for="(col, index) in cols" :col="col" :key="index" />
             </div>
         </div>
+        <Loading v-if="loading" />
     </div>
 </template>
 
@@ -22,39 +23,57 @@ import Header from "./parts/Header.vue"
 import TopRow from "./parts/TopRow.vue"
 import Column from "./parts/Column.vue"
 import Modal from "./parts/Modal.vue"
-import Dummy from "./Dummy"
-console.log(Dummy.cols)
+import Dummy from "./Dummy.json"
+import Loading from "./parts/Loading"
+
 export default {
     name: "App",
+    data: () => ({
+        Dummy: Dummy,
+        cols: [],
+        dataDelta: 10,
+        maxHistorySize: 0,
+        currentHistorySize: 0,
+        showModal: false,
+        loading: true,
+    }),
+    components: {
+        Modal,
+        Column,
+        TopRow,
+        Header,
+        Loading,
+    },
     created() {
         window.addEventListener("scroll", this.scrollListener)
     },
     mounted() {
-        this.updateCols()
+        setTimeout(() => {
+            console.log(this.dum)
+        }, 2000)
+        this.updateCols().then(() => (this.loading = false))
     },
-    data: () => ({
-        Dummy,
-        cols: [],
-        dataDelta: 10,
-        currentHistorySize: 0,
-        showModal: false,
-        loading: false,
-    }),
     methods: {
         updateCols() {
+            this.maxHistorySize = Math.max(
+                ...this.Dummy.cols.map((el) => el.cards.length)
+            )
             return new Promise((resolve) => {
                 setTimeout(() => {
                     this.cols = this.Dummy.cols.map((col) =>
-                        Object.assign(col, {
-                            cards: col.cards.slice(
-                                0,
-                                this.currentHistorySize + this.dataDelta
-                            ),
-                        })
+                        Object.assign(
+                            { ...col },
+                            {
+                                cards: col.cards.slice(
+                                    0,
+                                    this.currentHistorySize + this.dataDelta
+                                ),
+                            }
+                        )
                     )
                     this.currentHistorySize += this.dataDelta
                     resolve()
-                }, 3000)
+                }, 2000)
             })
         },
         toggleModal(to) {
@@ -67,28 +86,25 @@ export default {
         scrollListener() {
             let isBottomHit =
                 window.scrollY + window.innerHeight >=
-                document.body.scrollHeight
-
-            let maxLength = 0
-            this.Dummy.cols.forEach((col) => {
-                if (maxLength < col.cards.length) maxLength = col.cards.length
-                console.log(col.cards.length)
-            })
-            console.log(maxLength)
-            if (isBottomHit && this.currentHistorySize < maxLength) {
+                document.body.scrollHeight + 70
+            if (
+                isBottomHit &&
+                this.currentHistorySize < this.maxHistorySize &&
+                !this.loading
+            ) {
                 this.loading = true
-                this.updateCols().then(() => {
-                    console.log("asdasd")
-                    this.loading = false
-                })
+                this.updateCols().then(() => (this.loading = false))
             }
         },
     },
-    components: {
-        Modal,
-        Column,
-        TopRow,
-        Header,
+    watch: {
+        loading(newLoad) {
+            if (newLoad) {
+                document.body.style.overflow = "hidden"
+            } else {
+                document.body.style.overflow = "auto"
+            }
+        },
     },
 }
 </script>
