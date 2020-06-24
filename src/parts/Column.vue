@@ -2,7 +2,7 @@
     <div class="col">
         <div class="header">
             <div class="right">
-                <img src="../assets/svg/bull.svg" />
+                <img src="@/assets/svg/bull.svg" />
                 <p>{{ col.heading }}</p>
             </div>
             <div class="left">{{ realLength }}</div>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import TodoItem from "../components/TodoItem"
+import TodoItem from "@/components/TodoItem"
 export default {
     name: "Column",
     props: {

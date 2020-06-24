@@ -23,7 +23,7 @@
                             <div class="hr"></div>
                             <div class="actions">
                                 <div class="dots">
-                                    <img src="../assets/svg/Dots.svg" />
+                                    <img src="@/assets/svg/Dots.svg" />
                                 </div>
                                 <div class="action">{{ info.action }}</div>
                             </div>
@@ -56,14 +56,14 @@
                                             {{ detail[1] }}
                                             <img
                                                 v-if="index === 0"
-                                                src="../assets/svg/arrDown.svg"
+                                                src="@/assets/svg/arrDown.svg"
                                             />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="projectEdit">
                                     <span>Проект</span>
-                                    <img src="../assets/svg/pen.svg" />
+                                    <img src="@/assets/svg/pen.svg" />
                                 </div>
                                 <div class="hr"></div>
                                 <div class="contactDet">
@@ -78,7 +78,7 @@
                                             {{ detail[1] }}
                                             <img
                                                 v-if="index === 0"
-                                                src="../assets/svg/arrDown.svg"
+                                                src="@/assets/svg/arrDown.svg"
                                             />
                                         </div>
                                     </div>
@@ -88,10 +88,10 @@
                         <div class="history">
                             <div class="title">
                                 <div>
-                                    <img src="../assets/svg/bullHistory.svg" />
+                                    <img src="@/assets/svg/bullHistory.svg" />
                                     <span class="historyTxt">История</span>
-                                    <img src="../assets/svg/expand-list.svg" />
-                                    <img src="../assets/svg/compact-list.svg" />
+                                    <img src="@/assets/svg/expand-list.svg" />
+                                    <img src="@/assets/svg/compact-list.svg" />
                                 </div>
                                 <span>{{ info.history.length }}</span>
                             </div>
@@ -104,9 +104,9 @@
                                 <div class="actions">
                                     <div>
                                         <span class="cancel">Отменить</span>
-                                        <img src="../assets/svg/edit.svg" />
+                                        <img src="@/assets/svg/edit.svg" />
                                         <span class="pin">Заметка</span>
-                                        <img src="../assets/svg/arrDown.svg" />
+                                        <img src="@/assets/svg/arrDown.svg" />
                                     </div>
                                     <span>Отправить</span>
                                 </div>
@@ -136,7 +136,7 @@
                                                     el.section.time
                                                 }}</span>
                                                 <img
-                                                    src="../assets/svg/Ellipse.svg"
+                                                    src="@/assets/svg/Ellipse.svg"
                                                 />
                                             </div>
                                         </div>
@@ -200,7 +200,7 @@
                                                 >
                                             </div>
                                             <img
-                                                src="../assets/svg/Ellipse.svg"
+                                                src="@/assets/svg/Ellipse.svg"
                                             />
                                         </div>
                                         <p class="task">
@@ -218,7 +218,7 @@
 </template>
 
 <script>
-import HistoryElement from "../components/HistoryElement"
+import HistoryElement from "@/components/HistoryElement"
 
 export default {
     name: "Modal",
@@ -240,7 +240,7 @@ export default {
             this.$emit("toggleModal", false)
         },
         getIcon(path) {
-            return require(`../assets/svg/${path}`)
+            return require(`@/assets/svg/${path}`)
         },
     },
     watch: {

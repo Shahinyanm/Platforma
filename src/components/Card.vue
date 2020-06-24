@@ -11,7 +11,7 @@
             >
                 {{ detail.rightTxt }}
             </p>
-            <img v-else src="../assets/svg/VectorR.svg" />
+            <img v-else src="@/assets/svg/VectorR.svg" />
         </div>
         <div class="bottom" :style="{ color: detail.valueColor }">
             {{ detail.value }}

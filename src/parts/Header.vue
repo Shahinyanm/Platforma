@@ -12,15 +12,15 @@
             <div class="btns">
                 <div class="border" />
                 <div class="question">
-                    <img src="../assets/svg/_.svg" alt="" />
+                    <img src="@/assets/svg/_.svg" alt="" />
                 </div>
                 <div class="border" />
                 <div class="ellipse">
-                    <img src="../assets/svg/Ellipse.svg" alt="" />
+                    <img src="@/assets/svg/Ellipse.svg" alt="" />
                 </div>
             </div>
             <div class="createBtn" @click="openModal()">
-                <img src="../assets/svg/Vector.svg" />
+                <img src="@/assets/svg/Vector.svg" />
                 <p>Создать заявку</p>
             </div>
         </div>

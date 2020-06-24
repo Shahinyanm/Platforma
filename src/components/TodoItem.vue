@@ -13,7 +13,7 @@
             <div class="state">{{ item.state }}</div>
             <div class="day">
                 <span>{{ item.day }}</span>
-                <img src="../assets/svg/gDot.svg" />
+                <img src="@/assets/svg/gDot.svg" />
             </div>
         </div>
     </div>
