@@ -67,7 +67,6 @@
     "cols": [
         {
             "heading": "Новые",
-            "number": 7,
             "cards": [
                 {
                     "heading": "Иван",
@@ -409,7 +408,6 @@
         },
         {
             "heading": "Квалификация",
-            "number": 1,
             "cards": [
                 {
                     "heading": "Иван",
@@ -436,7 +434,6 @@
         },
         {
             "heading": "Перезвонить",
-            "number": 2,
             "cards": [
                 {
                     "heading": "Иван",
@@ -617,7 +614,6 @@
         },
         {
             "heading": "Остались возражения",
-            "number": 1,
             "cards": [
                 {
                     "heading": "Иван",
@@ -637,7 +633,6 @@
         },
         {
             "heading": "Оплатили",
-            "number": 1,
             "cards": [
                 {
                     "heading": "Иван",

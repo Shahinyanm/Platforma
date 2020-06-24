@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow-x: auto;
+    background-color: #f3f6f8;
+}
+.wrapper {
+    position: relative;
+}
+.con {
+    margin-top: 70px;
+    padding: 0 50px;
+}
+.todo {
+    padding: 0 20px;
+    margin-top: 18px;
+    display: flex;
+}

@@ -11,7 +11,12 @@
         <div class="con">
             <TopRow :topRow="Dummy.topRow" />
             <div class="todo">
-                <Column v-for="(col, index) in cols" :col="col" :key="index" />
+                <Column
+                    v-for="(col, index) in cols"
+                    :realLength="colsRealLength[index]"
+                    :col="col"
+                    :key="index"
+                />
             </div>
         </div>
         <Loading v-if="loading" />
@@ -32,6 +37,7 @@ export default {
         Dummy: Dummy,
         cols: [],
         dataDelta: 10,
+        colsRealLength: [],
         maxHistorySize: 0,
         currentHistorySize: 0,
         showModal: false,
@@ -56,7 +62,10 @@ export default {
     methods: {
         updateCols() {
             this.maxHistorySize = Math.max(
-                ...this.Dummy.cols.map((el) => el.cards.length)
+                ...this.Dummy.cols.map((el) => {
+                    this.colsRealLength.push(el.cards.length)
+                    return el.cards.length
+                })
             )
             return new Promise((resolve) => {
                 setTimeout(() => {
@@ -99,35 +108,13 @@ export default {
     },
     watch: {
         loading(newLoad) {
-            if (newLoad) {
-                document.body.style.overflow = "hidden"
-            } else {
-                document.body.style.overflow = "auto"
-            }
+            if (newLoad) document.body.style.overflow = "hidden"
+            else document.body.style.overflow = "auto"
         },
     },
 }
 </script>
 
 <style lang="scss">
-* {
-    margin: 0;
-    padding: 0;
-}
-body {
-    overflow-x: auto;
-    background-color: #f3f6f8;
-}
-.wrapper {
-    position: relative;
-}
-.con {
-    margin-top: 70px;
-    padding: 0 50px;
-}
-.todo {
-    padding: 0 20px;
-    margin-top: 18px;
-    display: flex;
-}
+@import "@/assets/scss/app.scss";
 </style>

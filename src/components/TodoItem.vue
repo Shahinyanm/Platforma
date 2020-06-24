@@ -13,7 +13,7 @@
             <div class="state">{{ item.state }}</div>
             <div class="day">
                 <span>{{ item.day }}</span>
-                <img src="../assets/gDot.svg" />
+                <img src="../assets/svg/gDot.svg" />
             </div>
         </div>
     </div>
@@ -22,93 +22,15 @@
 <script>
 export default {
     name: "TodoItem",
-    props: ["item"],
+    props: {
+        item: {
+            type: Object,
+            required: true,
+        },
+    },
 }
 </script>
 
 <style scoped lang="scss">
-.footer {
-    > .day {
-        display: flex;
-        align-items: center;
-        > span {
-            margin-right: 2px;
-            font-family: monospace;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 14px;
-            text-align: right;
-            color: #0abba5;
-        }
-    }
-    > .state {
-        border: 1px solid #e9edf2;
-        border-radius: 3px;
-        font-family: monospace;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 14px;
-        display: flex;
-        align-items: center;
-        color: #7d8790;
-        padding: 1px 3px 1px 4px;
-    }
-    margin-top: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.itemBodyCon {
-    padding-right: 13px;
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-}
-.item {
-    .itemBody {
-        width: 100%;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        font-family: monospace;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 17px;
-        color: #35383d;
-    }
-    background: #ffffff;
-    margin: 2.5px 0;
-    border: 1px solid #e9edf2;
-    border-radius: 5px;
-    padding: 5px 5px 8px;
-    &:hover {
-        cursor: pointer;
-        box-shadow: 0 0 5px black;
-    }
-}
-.header {
-    display: flex;
-    justify-content: space-between;
-    > .name {
-        font-family: monospace;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 17px;
-        color: #7d8790;
-    }
-    > .time {
-        font-family: monospace;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 14px;
-        text-align: right;
-        color: #7d8790;
-    }
-}
+@import "@/assets/scss/components/todoItem.scss";
 </style>

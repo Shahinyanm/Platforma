@@ -10,8 +10,17 @@
 
 <script>
 export default {
-    nane: "HistoryElem",
-    props: ["label", "time"],
+    nane: "HistoryElement",
+    props: {
+        label: {
+            type: String,
+            required: true,
+        },
+        time: {
+            type: String,
+            required: true,
+        },
+    },
 }
 </script>
 

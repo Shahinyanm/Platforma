@@ -8,7 +8,12 @@
 import Card from "../components/Card"
 export default {
     name: "TopRow",
-    props: ["topRow"],
+    props: {
+        topRow: {
+            type: Array,
+            required: true,
+        },
+    },
     components: {
         Card,
     },
